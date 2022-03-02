@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,300&display=swap');
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+.menu-hamburguer{
+    display: none;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.wrapper-header-main{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/banner.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo{
+    width:200px;
+}
+
+
+
+.nav-links ul{
+    list-style: none;
+    display: flex;
+    gap:20px;
+}
+
+.nav-links ul li a{
+    color: #fff;
+    font-size: 0.8125rem;
+    padding: 10px 20px ;
+    text-decoration: none;
+    display: block;
+}
+/*precisa fazer isto pq o hover fica movendo os textos*/
+.nav-links ul li a::after{
+    content: "";
+    width:0%;
+    height: 2px;
+    background-color: #f44336;
+    display: block;
+    margin: auto;/*faz com que a animacao seja sempre do centro, retire essa linha para ver o efeito sem*/
+    transition: 0.5s;
+
+}
+.nav-links ul li a:hover:after{
+    width: 100%;
+}
+
+
+
+
+@media screen and (max-width:980px){
+
+    nav{
+        flex-direction: column;
+        
+    }
+    nav .logo{
+        width:175px;
+        margin: 30px 0px;
+    }
+    
+}
+
+@media screen and (max-width:580px){
+body{
+    min-width: 250px;
+}
+nav{
+    flex-direction: row;
+}
+nav .logo{
+    width:150px;
+    margin: 20px 0;
+}
+.nav-links{
+    display: none;
+}
+
+
+/*menu hamburguer*/
+.menu-hamburguer {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #FFF;
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 4px;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+}
+
+
+/*end of header part*/
+
